@@ -9,12 +9,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;  
     background-color: rgb(27, 26, 26);
 }
 
 .container {
     width:300px;
     height: 400px;
-    background-color: gainsboro;
+    background-color: #00ADB5;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.display {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #EEEEEE;
     border-radius: 5px;
+    width: 95%;
+    height: 55px;
+}
+
+.calc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px;
+    justify-content: space-between;
+}
+button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1 0 calc(25% - 4px);
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #393E46;
 }
