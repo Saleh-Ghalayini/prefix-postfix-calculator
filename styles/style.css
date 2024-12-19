@@ -3,17 +3,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;  
+body {  
     background-color: rgb(27, 26, 26);
 }
 
-.container {
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+}
+
+.ed-card, .calc-card, .pro-card {
     width:300px;
     height: 400px;
     background-color: #00ADB5;
@@ -21,12 +32,24 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+}
+
+.ed-card {
+    padding: 20px;
+    width: 350px;
+    margin: 20px;
+}
+
+.ed-card h2 {
+    margin-bottom: 10px;
 }
 
 .display {
     margin-top: 10px;
     padding: 10px;
+    margin-left: 8px;
     border: none;
     background-color: #EEEEEE;
     border-radius: 5px;
@@ -42,7 +65,6 @@ body {
     justify-content: space-between;
 }
 button {
-    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     font-weight: 600;
     flex: 1 0 calc(25% - 4px);
@@ -51,4 +73,22 @@ button {
     border: none;
     color: white;
     background-color: #393E46;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #2C3137;
+}
+
+button:active {
+    background-color: #2C3137;
+}
+
+button:focus {
+    outline: none;
+}
+
+.toggle {
+    padding: 5px;
+    height: 35px;
 }
