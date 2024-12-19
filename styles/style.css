@@ -25,7 +25,7 @@ header {
 }
 
 .ed-card, .calc-card, .pro-card {
-    width:300px;
+    width:320px;
     height: 400px;
     background-color: #00ADB5;
     border-radius: 10px;
@@ -44,6 +44,10 @@ header {
 
 .ed-card h2 {
     margin-bottom: 10px;
+}
+
+.ed-card, .pro-card {
+    color: #393E46; 
 }
 
 .display {
@@ -65,8 +69,8 @@ header {
     justify-content: space-between;
 }
 button {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     flex: 1 0 calc(25% - 4px);
     height: 60px;
     border-radius: 5px;
@@ -91,4 +95,30 @@ button:focus {
 .toggle {
     padding: 5px;
     height: 35px;
+}
+
+.light-container  {
+    background-color: #cde9fa;
+}
+
+.light-body {
+    background-color: #FDFDFD;
+}
+
+.light-content {
+    background-color: #FFFFFF;
+    color: #005A8C;
+}
+
+.light-content:hover {
+    background-color: #f0faff;
+}
+
+.light-toggle {
+    color: #005A8C;
+    background-color: #f0faff;
+}
+
+.light-toggle:hover {
+    background-color: #f0faff;
 }

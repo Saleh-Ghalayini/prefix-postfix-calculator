@@ -1,16 +1,17 @@
 const toggle = document.getElementById("toggle");
 const result = document.getElementById("result");
-const container = document.getElementById("container");
+const containers = document.querySelectorAll(".container");
 const calc_btn = document.querySelectorAll(".calc-btn");
 const body = document.body;
 
 toggle.addEventListener("click", () => {
-    document.body.style.backgroundColor = "#FDFDFD";
-    container.style.backgroundColor = "#cde9fa";
-    result.style.backgroundColor = "#FFFFFF";
-    calc_btn.forEach(btn => {
-        btn.style.backgroundColor = "#FFFFFF";
-        btn.style.color = "#005A8C";
+    body.classList.toggle("light-body");
+    containers.forEach(cont => {
+        cont.classList.toggle("light-container");
     });
-    toggle.innerHTML = "Toggle Dark";
+    result.classList.toggle("light-content");
+    calc_btn.forEach(btn => {
+        btn.classList.toggle("light-content");
+    });
+    toggle.classList.toggle("light-toggle");
 });
