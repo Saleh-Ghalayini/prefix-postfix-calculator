@@ -7,7 +7,6 @@ let operand_counter;
 let eq_operands = [];
 let operator_counter;
 const operators = ["+", "-", "*", "/"];
-const valid_keys = ['/', '*', '-', '+', '.', '=', ' ', '7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '00'];
 
 const body = document.body;
 const type = document.getElementById("type");
@@ -150,16 +149,12 @@ buttons.forEach(button => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Backspace")
-        field.value = field.value.slice(0, -1);
-    else if (e.key === "Enter") {
+    if (e.key === "Enter") {
         e.preventDefault();
         checkEquation(field.value); 
-    } else if (valid_keys.includes(e.key))
-        field.value += e.key;
-    else
+    } else
         e.preventDefault();
-});
+}); 
 
 toggle.addEventListener("click", () => {
     body.classList.toggle("light-body");
