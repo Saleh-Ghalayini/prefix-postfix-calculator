@@ -1,9 +1,8 @@
 let stack;
 let op_one = 0;
 let op_two = 0;
-let eq_list = [];
 let result = 0;
-let equation = "";
+let eq_list = [];
 let operand_counter;
 let eq_operands = [];
 let operator_counter;
@@ -130,8 +129,7 @@ function checkEquation(eq) {
 }
 
 equal.addEventListener("click", () => {
-    equation = field.value;
-    checkEquation(equation);
+    checkEquation(field.value);
 });
 
 buttons.forEach(button => {
@@ -152,17 +150,15 @@ buttons.forEach(button => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if(valid_keys.includes(e.key) || e.key === "Backspace") {
-        if(e.key === "Backspace")
-            field.value = field.value.slice(0, -1);
-        else if (e.key ==="Enter")
-            equal.click();
-        else {
-            field.value += e.key;
-        }
-    } else {
+    if (e.key === "Backspace")
+        field.value = field.value.slice(0, -1);
+    else if (e.key === "Enter") {
         e.preventDefault();
-    }
+        checkEquation(field.value); 
+    } else if (valid_keys.includes(e.key))
+        field.value += e.key;
+    else
+        e.preventDefault();
 });
 
 toggle.addEventListener("click", () => {
