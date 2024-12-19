@@ -8,6 +8,7 @@ let operand_counter;
 let eq_operands = [];
 let operator_counter;
 const operators = ["+", "-", "*", "/"];
+const valid_keys = ['/', '*', '-', '+', '.', '=', ' ', '7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '00'];
 
 const body = document.body;
 const type = document.getElementById("type");
@@ -15,7 +16,7 @@ const field = document.getElementById("field");
 const equal = document.getElementById("equal");
 const toggle = document.getElementById("toggle");
 const title = document.querySelectorAll(".title");
-const calc_btn = document.querySelectorAll(".calc-btn");
+const buttons = document.querySelectorAll(".calc-btn");
 const containers = document.querySelectorAll(".container");
 
 
@@ -133,6 +134,37 @@ equal.addEventListener("click", () => {
     checkEquation(equation);
 });
 
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const button_id = button.id;
+
+        if (button_id === "clear")
+            field.value = "";
+        else if (button_id === "delete")
+            field.value = field.value.slice(0, -1);
+        else if (button_id === "space")
+            field.value += " ";
+        else if (button_id === "equal")
+            field.value += "";
+        else
+            field.value += button.innerHTML;
+    });
+});
+
+document.addEventListener("keydown", (e) => {
+    if(valid_keys.includes(e.key) || e.key === "Backspace") {
+        if(e.key === "Backspace")
+            field.value = field.value.slice(0, -1);
+        else if (e.key ==="Enter")
+            equal.click();
+        else {
+            field.value += e.key;
+        }
+    } else {
+        e.preventDefault();
+    }
+});
+
 toggle.addEventListener("click", () => {
     body.classList.toggle("light-body");
     type.classList.toggle("light-toggle");
@@ -147,7 +179,7 @@ toggle.addEventListener("click", () => {
         t.classList.toggle("light-title");
     });
 
-    calc_btn.forEach(btn => {
+    buttons.forEach(btn => {
         btn.classList.toggle("light-content");
     });
 });

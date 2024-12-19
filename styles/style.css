@@ -166,3 +166,24 @@ button:focus {
 .light-title {
     color: #005A8C;
 }
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .ed-card, .calc-card, .pro-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .calc-buttons button {
+        flex: 1 0 calc(25% - 8px);
+    }
+
+    .title, .ed-card h2, .ed-card p, .pro-card h2 {
+        text-align: center;
+    }
+}
