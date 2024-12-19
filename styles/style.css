@@ -29,7 +29,6 @@ header {
     height: 400px;
     background-color: #00ADB5;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,12 +52,19 @@ header {
 .display {
     margin-top: 10px;
     padding: 10px;
+    font-size: 23px;
     margin-left: 8px;
     border: none;
     background-color: #EEEEEE;
     border-radius: 5px;
     width: 95%;
     height: 55px;
+    caret-color: #2C3137;
+}
+.display:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .calc-buttons {
@@ -92,6 +98,8 @@ button:focus {
     outline: none;
 }
 
+
+
 .toggle {
     padding: 5px;
     height: 35px;
@@ -99,7 +107,9 @@ button:focus {
 
 .light-container  {
     background-color: #cde9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .light-body {
     background-color: #FDFDFD;
