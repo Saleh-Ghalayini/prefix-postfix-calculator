@@ -61,11 +61,13 @@ header {
     font-size: 23px;
     margin-left: 8px;
     border: none;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 5px;
     width: 95%;
     height: 55px;
     caret-color: #2C3137;
+    font-weight: 700;
+    color: #393E46;
 }
 .display:focus {
     outline: none;
@@ -120,6 +122,11 @@ button:focus {
 }
 
 .light-content {
+    background-color: #FFFFFF;
+    color: #005A8C;
+}
+
+.light-field {
     background-color: #FFFFFF;
     color: #005A8C;
 }
