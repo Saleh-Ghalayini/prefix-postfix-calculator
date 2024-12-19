@@ -40,7 +40,18 @@ function performOperation(operation, num_one, num_two) {
 }
 
 function evaluatePrefix(list) {
-
+    stack = [];
+    for(let i = list.length - 1; i >= 0; i--) {
+        if(!isNaN(list[i]))
+            stack.push(Number(list[i]));
+        else if (operators.includes(list[i])) {
+            op_one = stack.pop();
+            op_two = stack.pop();
+            result = performOperation(list[i], op_one, op_two);
+            stack.push(result);
+        }
+    }
+    displayResult(result);
 }
 
 function evaluatePostfix(list) {
