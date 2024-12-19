@@ -12,65 +12,71 @@
             <button id="toggle" class="toggle">Toggle Theme</button>
         </div>
     </header>
+        <div class="content">
+            <h2 class="title">The button below is to switch between the postfix and prefix methods<br />
+                Make sure to enter a valid input evenly space it.
+            </h2>
+            <button id="type">Postfix</button>
+            <h2 class="title"></h2>
+            <div class="card-container">
+                <div class="ed-card container">
+                    <h2>Understanding Prefix and Postfix Evaluation</h2>
+                    <p>
+                        <strong>Prefix notation:</strong> requires that all operators precede the operands that they work on.
+                    </p>
+                    <p>
+                        <strong>Postfix notation:</strong> requires that all operators follow the operands that they work on.
+                    </p>
+                    <h3>Prefix Evaluation</h3>
+                    <p><strong>Expression:</strong> + 9 * 2 3</p>
+                    <ol>
+                        <li>Start from the rightmost operand: <code>9</code> and <code>* 2 3</code>.</li>
+                        <li>Evaluate <code>* 2 3 → 2 * 3 = 6</code>.</li>
+                        <li>Add <code>9 + 6 = 15</code>.</li>
+                    </ol>
+                    <p class="result"><strong>Result:</strong> 15</p>
 
-    <div class="card-container">
-        <div class="ed-card container">
-            <h2>Understanding Prefix and Postfix Evaluation</h2>
-            <p>
-                <strong>Prefix notation:</strong> requires that all operators precede the operands that they work on.
-            </p>
-            <p>
-                <strong>Postfix notation:</strong> requires that all operators follow the operands that they work on.
-            </p>
-            <h3>Prefix Evaluation</h3>
-            <p><strong>Expression:</strong> + 9 * 2 3</p>
-            <ol>
-                <li>Start from the rightmost operand: <code>9</code> and <code>* 2 3</code>.</li>
-                <li>Evaluate <code>* 2 3 → 2 * 3 = 6</code>.</li>
-                <li>Add <code>9 + 6 = 15</code>.</li>
-            </ol>
-            <p class="result"><strong>Result:</strong> 15</p>
-
-            <h3>Postfix Evaluation</h3>
-            <p><strong>Expression:</strong> 9 2 3 * +</p>
-            <ol>
-                <li>Start with the first operator <code>*</code>: <code>2 * 3 = 6</code>.</li>
-                <li>Add <code>9 + 6 = 15</code>.</li>
-            </ol>
-            <p class="result"><strong>Result:</strong> 15</p>
-        </div>
-        
-        <div class="calc-card">
-            <div id="container" class="container">
-                <input type="text" id="field" class="display" />
-                <div class="calc-buttons">
-                    <button class="clear calc-btn">C</button>
-                    <button class="calc-btn">CE</button>
-                    <button class="calc-btn">DEL</button>
-                    <button class="calc-btn">/</button>
-                    <button class="calc-btn">7</button>
-                    <button class="calc-btn">8</button>
-                    <button class="calc-btn">9</button>
-                    <button class="calc-btn">*</button>
-                    <button class="calc-btn">4</button>
-                    <button class="calc-btn">5</button>
-                    <button class="calc-btn">6</button>
-                    <button class="calc-btn">-</button>
-                    <button class="calc-btn">1</button>
-                    <button class="calc-btn">2</button>
-                    <button class="calc-btn">3</button>
-                    <button class="calc-btn">+</button>
-                    <button class="calc-btn">( - )</button>
-                    <button class="calc-btn">0</button>
-                    <button class="calc-btn">.</button>
-                    <button class="equal calc-btn">=</button>
+                    <h3>Postfix Evaluation</h3>
+                    <p><strong>Expression:</strong> 9 2 3 * +</p>
+                    <ol>
+                        <li>Start with the first operator <code>*</code>: <code>2 * 3 = 6</code>.</li>
+                        <li>Add <code>9 + 6 = 15</code>.</li>
+                    </ol>
+                    <p class="result"><strong>Result:</strong> 15</p>
+                </div>
+                
+                <div class="calc-card">
+                    <div id="container" class="container">
+                        <input type="text" id="field" class="display" />
+                        <div class="calc-buttons">
+                            <button class="clear calc-btn">C</button>
+                            <button class="calc-btn">CE</button>
+                            <button class="calc-btn">DEL</button>
+                            <button class="calc-btn">/</button>
+                            <button class="calc-btn">7</button>
+                            <button class="calc-btn">8</button>
+                            <button class="calc-btn">9</button>
+                            <button class="calc-btn">*</button>
+                            <button class="calc-btn">4</button>
+                            <button class="calc-btn">5</button>
+                            <button class="calc-btn">6</button>
+                            <button class="calc-btn">-</button>
+                            <button class="calc-btn">1</button>
+                            <button class="calc-btn">2</button>
+                            <button class="calc-btn">3</button>
+                            <button class="calc-btn">+</button>
+                            <button class="calc-btn">( - )</button>
+                            <button class="calc-btn">0</button>
+                            <button class="calc-btn">.</button>
+                            <button id="equal" class="equal calc-btn">=</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro-card container">
+                    <h2>Solving Process</h2>
                 </div>
             </div>
         </div>
-        <div class="pro-card container">
-            <h2>Solving Process</h2>
-        </div>
-    </div>
     <script src="scripts/app.js"></script>
 </body>
 </html>
