@@ -194,9 +194,7 @@ toggle.addEventListener("click", () => {
         cont.classList.toggle("light-container");
     });
 
-    title.forEach(t => {
-        t.classList.toggle("light-title");
-    });
+    title.classList.toggle("light-title");
 
     buttons.forEach(btn => {
         btn.classList.toggle("light-content");

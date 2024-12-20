@@ -213,3 +213,8 @@ button:focus {
 .error {
     color: #e02323;
 }
+
+.container {
+    height: 410px;
+    border-radius: 10px;
+}
