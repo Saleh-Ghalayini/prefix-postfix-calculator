@@ -1,4 +1,5 @@
-let stack;
+let stack = [];
+let solving_steps = [];
 let op_one = 0;
 let op_two = 0;
 let result = 0;
@@ -14,12 +15,23 @@ const field = document.getElementById("field");
 const equal = document.getElementById("equal");
 const toggle = document.getElementById("toggle");
 const title = document.querySelectorAll(".title");
+const process_div = document.getElementById("process");
 const buttons = document.querySelectorAll(".calc-btn");
 const containers = document.querySelectorAll(".container");
 
 
+function updateProcess() {
+        process_div.innerHTML = ``;
+
+        solving_steps.forEach((step, index) => {
+            const stepElement = document.createElement("p");
+            stepElement.innerHTML = `Step ${index + 1}: <br />${step}`;
+            process_div.appendChild(stepElement);
+        });
+}
+
 function displayResult(result) {
-    field.value = result;
+    field.value = `${Number.isInteger(result) ? result : result.toFixed(2)}`;
 }
 
 function performOperation(operation, num_one, num_two) {
@@ -40,6 +52,7 @@ function performOperation(operation, num_one, num_two) {
 
 function evaluatePrefix(list) {
     stack = [];
+    solving_steps = [];
     for(let i = list.length - 1; i >= 0; i--) {
         if(!isNaN(list[i]))
             stack.push(Number(list[i]));
@@ -47,10 +60,14 @@ function evaluatePrefix(list) {
             op_one = stack.pop();
             op_two = stack.pop();
             result = performOperation(list[i], op_one, op_two);
-            stack.push(result);
+            solving_steps.push(`Evaluate ${list[i]} ${op_one} ${op_two} = 
+                <br />${op_one} ${list[i]} ${op_two} = 
+                <br />${Number.isInteger(result) ? result : result.toFixed(2)}`);
+            stack.push(result.toFixed(2));
         }
     }
     displayResult(result);
+    updateProcess();
 }
 
 function evaluatePostfix(list) {
@@ -62,10 +79,14 @@ function evaluatePostfix(list) {
                 op_two = stack.pop();
                 op_one = stack.pop();
                 result = performOperation(list[i], op_one, op_two);
+                solving_steps.push(`Evaluate ${op_two} ${op_one} ${list[i]} = 
+                    <br />${op_two} ${list[i]} ${op_one} = 
+                    <br />${Number.isInteger(result) ? result : result.toFixed(2)}`);
                 stack.push(result);
             }
         }
         displayResult(result);
+        updateProcess();
     }
 
 function checkEquation(eq) {
@@ -73,7 +94,7 @@ function checkEquation(eq) {
     operator_counter = 0;
     eq_list = eq.trim().split(" ");
     
-    if(eq.length == 0) {
+    if(eq.trim() == "") {
         alert("You haven't entered anything to evaluate!");
         field.focus();
         return;
