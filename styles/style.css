@@ -202,3 +202,11 @@ button:focus {
     margin: 5px 0;
     font-weight: 900;
 }
+
+.error-style {
+    font-size: 32px;
+    background-color: #e02323;
+    color:#FFFFFF;
+    font-weight:700;
+    text-align: center;
+}
