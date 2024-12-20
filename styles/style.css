@@ -6,40 +6,42 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+/*added transition to make them toggling easier and nicer to look at*/
 body {  
     background-color: rgb(27, 26, 26);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .card-container {
+    gap: 100px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     padding: 70px;
     padding-top: 40px;
-    gap: 100px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .ed-card, .calc-card, .pro-card {
     width:320px;
     height: 410px;
-    background-color: #00ADB5;
-    border-radius: 10px;
     display: flex;
+    border-radius: 10px;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    background-color: #00ADB5;
 }
 
 .ed-card {
-    padding: 20px;
     width: 350px;
     margin: 20px;
+    padding: 20px;
 }
 
 .pro-card {
@@ -57,42 +59,43 @@ header {
 }
 
 .display {
-    margin-top: 10px;
+    width: 95%;
+    height: 55px;
+    border: none;
     padding: 10px;
     font-size: 23px;
     margin-left: 8px;
-    border: none;
-    background-color: #ffffff;
-    border-radius: 5px;
-    width: 95%;
-    height: 55px;
-    caret-color: #2C3137;
+    margin-top: 10px;
     font-weight: 700;
     color: #393E46;
     user-select: none;
+    border-radius: 5px;
+    caret-color: #2C3137;
+    background-color: #ffffff;
 }
 .display:focus {
-    outline: none;
     border: none;
+    outline: none;
     box-shadow: none;
 }
 
 .calc-buttons {
-    display: flex;
-    flex-wrap: wrap;
     gap: 4px;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 button {
-    font-size: 22px;
-    font-weight: 700;
-    flex: 1 0 calc(25% - 4px);
     height: 60px;
-    border-radius: 5px;
     border: none;
     color: white;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 5px;
+    flex: 1 0 calc(25% - 4px);
     background-color: #393E46;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -105,7 +108,7 @@ button:active {
 }
 
 button:focus {
-    outline: none;
+    outline: 3px solid #f0faff;
 }
 
 .toggle {
@@ -124,13 +127,13 @@ button:focus {
 }
 
 .light-content {
-    background-color: #FFFFFF;
     color: #005A8C;
+    background-color: #FFFFFF;
 }
 
 .light-field {
-    background-color: #FFFFFF;
     color: #005A8C;
+    background-color: #FFFFFF;
 }
 
 .light-content:hover {
@@ -147,42 +150,42 @@ button:focus {
 }
 .content {
     display: flex;
+    padding: 15px;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 15px;
 }
 
 #type {
-    margin-top: 15px;
-    padding: 5px;
     width: 90px;
+    padding: 5px;
+    margin-top: 15px;
 }
 
 .title {
-    color: white;
     padding: 2px;
+    color: white;
     text-align: center;
 }
 
 .light-title {
     color: #005A8C;
 }
-
+/*making the website responsive for mobile phones*/
 @media (max-width: 768px) {
     .card-container {
-        flex-direction: column;
-        padding: 20px;
         gap: 20px;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .calc-buttons button {
+        flex: 1 0 calc(25% - 8px);
     }
 
     .ed-card, .calc-card, .pro-card {
         width: 100%;
         max-width: 400px;
-    }
-
-    .calc-buttons button {
-        flex: 1 0 calc(25% - 8px);
     }
 
     .title, .ed-card h2, .ed-card p, .pro-card h2 {
@@ -196,18 +199,18 @@ button:focus {
 }
 
 #process p {
+    margin: 5px 0;
+    color: #333;
     font-size: 14px;
     line-height: 1.5;
-    color: #333;
-    margin: 5px 0;
     font-weight: 900;
 }
 
 .h2-process {
+    color: #333;
     display: block;
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
 }
 
 .error {
