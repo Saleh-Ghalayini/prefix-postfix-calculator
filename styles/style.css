@@ -203,10 +203,13 @@ button:focus {
     font-weight: 900;
 }
 
-.error-style {
-    font-size: 32px;
-    background-color: #e02323;
-    color:#FFFFFF;
-    font-weight:700;
-    text-align: center;
+.h2-process {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.error {
+    color: #e02323;
 }

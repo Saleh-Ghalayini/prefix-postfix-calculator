@@ -1,3 +1,4 @@
+
 let stack = [];
 let solving_steps = [];
 let op_one = 0;
@@ -8,27 +9,29 @@ let operand_counter;
 let eq_operands = [];
 let operator_counter;
 const operators = ["+", "-", "*", "/"];
+let title_text = `Please enter a valid input. Use spaces between operands and operators, e.g., <code>3 5 + 2 *</code>`;
 
 const body = document.body;
 const type = document.getElementById("type");
 const field = document.getElementById("field");
 const equal = document.getElementById("equal");
 const toggle = document.getElementById("toggle");
-const title = document.querySelectorAll(".title");
-const pro_title = document.getElementById("process-card");
+const title = document.getElementById("title");
 const process_div = document.getElementById("process");
 const buttons = document.querySelectorAll(".calc-btn");
 const containers = document.querySelectorAll(".container");
 
 
 function updateProcess() {
-        process_div.innerHTML = ``;
+    title.classList.remove("error");
+    title.innerHTML = title_text;
+    process_div.innerHTML = ``;
 
-        solving_steps.forEach((step, index) => {
-            const stepElement = document.createElement("p");
-            stepElement.innerHTML = `Step ${index + 1}: <br />${step}`;
-            process_div.appendChild(stepElement);
-        });
+    solving_steps.forEach((step, index) => {
+        const stepElement = document.createElement("p");
+        stepElement.innerHTML = `Step ${index + 1}: <br />${step}`;
+        process_div.appendChild(stepElement);
+    });
 }
 
 function displayResult(result) {
@@ -91,25 +94,25 @@ function evaluatePostfix(list) {
 }
 
 function applyError(e_code) {
-    pro_title.classList.add("error-style");
+    title.classList.add("error");
     field.focus();
 
     if(e_code === 1)
-        return pro_title.innerHTML = `You haven't entered anything to evaluate!`;
+        return title.innerHTML = `You haven't entered anything to evaluate!`;
     else if (e_code === 2)
-        return pro_title.innerHTML = `You haven't entered enough input to evaluate!`;
+        return title.innerHTML = `You haven't entered enough input to evaluate!`;
     else if (e_code === 3)
-        return pro_title.innerHTML = `You have entered an invalid input!`;
+        return title.innerHTML = `You have entered an invalid input!`;
     else if (e_code === 4)
-        return pro_title.innerHTML = `The number of operators and operands is not proportional`;
+        return title.innerHTML = `The number of operators and operands is not proportional`;
     else if (e_code === 5)
-        return pro_title.innerHTML = `This expression is invalid for a postfix evaluation!`;
+        return title.innerHTML = `This expression is invalid for a postfix evaluation!`;
     else if (e_code === 6)
-        return pro_title.innerHTML = `This expression is invalid for a prefix evaluation!`;
+        return title.innerHTML = `This expression is invalid for a prefix evaluation!`;
     else if (e_code === 7)
-        return pro_title.innerHTML = `The last character in a postfix expression must be an operator!`;
+        return title.innerHTML = `The last character in a postfix expression must be an operator!`;
     else if (e_code === 8)
-        return pro_title.innerHTML = `The last character in a prefix expression must be a number!`;
+        return title.innerHTML = `The last character in a prefix expression must be a number!`;
 }
 
 function checkEquation(eq) {
